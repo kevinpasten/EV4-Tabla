@@ -1,0 +1,81 @@
+﻿@model IEnumerable<EV4.Models.Empleado>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<head>
+    <link rel="stylesheet" href="/css/estilos.css" />
+</head>
+
+<div class="header">
+    <!--Content before waves-->
+    <h1 class="mb-5">Tabla de empleados</h1>
+</div>
+<!--Header ends-->
+<!--Content starts-->
+<div class="row">
+    <div class="col-8">
+        <p>
+            <a class="btn btn-primary" asp-action="Create"><i class="bi bi-person-plus-fill me-2"></i>Nuevo empleado</a>
+        </p>
+    </div>
+    <div class="col-4">
+        <form asp-action="Search" method="get">
+            <div class="input-group">
+                <input type="text" class="form-control" name="searchTerm" placeholder="Buscar empleado...">
+                <button class="btn btn-secondary" type="submit"><i class="bi bi-search"></i></button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<table class="table table-hover table-light shadow">
+    <thead class="table-dark">
+        <tr>
+            <th>
+                <a class="text-decoration-none text-light" href="@Url.Action("IndexOrdenado",
+                new { sortOrder = ViewData["NombreSortParam"] })">Nombre</a>
+            </th>
+            <th>
+                <a class="text-decoration-none text-light" href="@Url.Action("IndexOrdenado",
+                new { sortOrder = ViewData["ApellidoSortParam"] })">Apellido</a>
+            </th>
+            <th>
+                <a class="text-decoration-none text-light" href="@Url.Action("IndexOrdenado",
+                new { sortOrder = ViewData["EmailSortParam"] })">Email</a>
+            </th>
+            <th>
+                <a class="text-decoration-none text-light" href="@Url.Action("IndexOrdenado",
+                new { sortOrder = ViewData["FechaContratacionSortParam"] })">Fecha Contratación</a>
+            </th>
+            <th>
+                <a class="text-decoration-none text-light">Acciones</a>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Apellido)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FechaContratacion)
+                </td>
+                <td>
+                    <a title="Editar" class="btn btn-primary btn-circle mx-1" asp-action="Edit" asp-route-id="@item.Id"><i class="bi bi-pencil-fill"></i></a>
+                    <a title="Ver" class="btn btn-secondary btn-circle mx-1" asp-action="Details" asp-route-id="@item.Id"><i class="bi bi-info-square"></i></a>
+                    <a title="Eliminar" class="btn btn-danger btn-circle mx-1" asp-action="Delete" asp-route-id="@item.Id"><i class="bi bi-x-lg"></i></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
