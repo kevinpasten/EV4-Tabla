@@ -1,0 +1,125 @@
+/* _content/EV4/Views/Shared/_Layout.cshtml.rz.scp.css */
+/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+body[b-1vu0pr4dgv] {
+    margin: 0;
+    background: linear-gradient(60deg, rgba(84,58,183,1) 0%, rgba(0,172,193,1) 100%);
+}
+
+a.navbar-brand[b-1vu0pr4dgv] {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+a[b-1vu0pr4dgv] {
+  color: #0077cc;
+}
+
+.btn-primary[b-1vu0pr4dgv] {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active[b-1vu0pr4dgv], .nav-pills .show > .nav-link[b-1vu0pr4dgv] {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.border-top[b-1vu0pr4dgv] {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom[b-1vu0pr4dgv] {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow[b-1vu0pr4dgv] {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy[b-1vu0pr4dgv] {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+.footer[b-1vu0pr4dgv] {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px;
+}
+
+.waves[b-1vu0pr4dgv] {
+    width: 100%;
+    height: 15vh;
+    margin-bottom: -7px; /*Fix for safari gap*/
+    min-height: 100px;
+    max-height: 150px;
+    position: absolute;
+    bottom: 65px;
+    left: 0;
+    width: 100%;
+    height: 150px; /* Ajusta la altura según tus necesidades */
+    z-index: -1;
+}
+
+.content[b-1vu0pr4dgv] {
+    position: relative;
+    height: 20vh;
+    text-align: center;
+    background-color: white;
+}
+
+/* Animation */
+
+.parallax > use[b-1vu0pr4dgv] {
+    animation: move-forever-b-1vu0pr4dgv 25s cubic-bezier(.55,.5,.45,.5) infinite;
+}
+
+    .parallax > use:nth-child(1)[b-1vu0pr4dgv] {
+        animation-delay: -2s;
+        animation-duration: 7s;
+    }
+
+    .parallax > use:nth-child(2)[b-1vu0pr4dgv] {
+        animation-delay: -3s;
+        animation-duration: 10s;
+    }
+
+    .parallax > use:nth-child(3)[b-1vu0pr4dgv] {
+        animation-delay: -4s;
+        animation-duration: 13s;
+    }
+
+    .parallax > use:nth-child(4)[b-1vu0pr4dgv] {
+        animation-delay: -5s;
+        animation-duration: 20s;
+    }
+
+@keyframes move-forever-b-1vu0pr4dgv {
+    0% {
+        transform: translate3d(-90px,0,0);
+    }
+
+    100% {
+        transform: translate3d(85px,0,0);
+    }
+}
+/*Shrinking for mobile*/
+@media (max-width: 768px) {
+    .waves[b-1vu0pr4dgv] {
+        height: 40px;
+        min-height: 40px;
+    }
+
+    .content[b-1vu0pr4dgv] {
+        height: 30vh;
+    }
+
+    h1[b-1vu0pr4dgv] {
+        font-size: 24px;
+    }
+}
